@@ -29,6 +29,9 @@ public class User extends DateAudit {
     @Size(max = 15)
     private String username;
 
+    @DecimalMin("0.00")
+    private Double balance;
+
     @NaturalId
     @NotBlank
     @Size(max = 40)
@@ -102,5 +105,13 @@ public class User extends DateAudit {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 }

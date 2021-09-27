@@ -5,8 +5,9 @@ public class UserSummary {
     private String username;
     private String name;
     private String email;
+    private Double balance;
 
-    public UserSummary(Long id, String username, String name, String email) {
+    public UserSummary(Long id, String username, String name, String email, Double balance) {
         this.id = id;
         this.username = username;
         this.name = name;
@@ -46,4 +47,11 @@ public class UserSummary {
     }
 
 
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
 }
