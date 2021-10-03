@@ -34,9 +34,6 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Collections;
 
-/**
- * Created by rajeevkumarsingh on 02/08/17.
- */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -86,7 +83,7 @@ public class AuthController {
 
         // Creating user's account
         User user = new User(signUpRequest.getName(), signUpRequest.getUsername(),
-                signUpRequest.getEmail(), signUpRequest.getPassword());
+                signUpRequest.getEmail(), signUpRequest.getPassword(), signUpRequest.getCountry());
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
