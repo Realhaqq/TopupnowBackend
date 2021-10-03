@@ -30,13 +30,16 @@ public class User extends DateAudit {
     private String username;
 
     @DecimalMin("0.00")
-    private Double balance;
+    private Double balance = 0.00;
 
     @NaturalId
     @NotBlank
     @Size(max = 40)
     @Email
     private String email;
+
+    @NotBlank
+    private String country;
 
     @NotBlank
     @Size(max = 100)
@@ -52,11 +55,12 @@ public class User extends DateAudit {
 
     }
 
-    public User(String name, String username, String email, String password) {
+    public User(String name, String username, String email, String password, String country) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.country = country;
     }
 
     public Long getId() {
@@ -113,5 +117,13 @@ public class User extends DateAudit {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

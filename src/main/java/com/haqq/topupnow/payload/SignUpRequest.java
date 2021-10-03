@@ -12,6 +12,9 @@ public class SignUpRequest {
     private String username;
 
     @NotBlank
+    private String country;
+
+    @NotBlank
     @Size(max = 40)
     @Email
     private String email;
@@ -52,5 +55,11 @@ public class SignUpRequest {
         this.password = password;
     }
 
+    public String getCountry() {
+        return country;
+    }
 
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
